@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "ATO.BARCODE",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
@@ -11,92 +11,149 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Get Started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Essentials",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
-            ]
-          }
-        ]
-      },
-      {
         "tab": "API Reference",
         "groups": [
           {
-            "group": "API Documentation",
+            "group": "RoleClaim",
             "pages": [
-              "api-reference/introduction"
+              "api-reference/endpoint/roleclaim/get-all-role-claimseg-product-create-permission",
+              "api-reference/endpoint/roleclaim/add-a-role-claim",
+              "api-reference/endpoint/roleclaim/get-all-role-claims-by-id",
+              "api-reference/endpoint/roleclaim/delete-a-role-claim"
             ]
           },
           {
-            "group": "Endpoint Examples",
+            "group": "Role",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api-reference/endpoint/role/get-all-roles-basic-admin-etc",
+              "api-reference/endpoint/role/add-a-role",
+              "api-reference/endpoint/role/delete-a-role",
+              "api-reference/endpoint/role/get-permissions-by-role-id",
+              "api-reference/endpoint/role/edit-a-role-claim"
+            ]
+          },
+          {
+            "group": "Dashboard",
+            "pages": ["api-reference/endpoint/dashboard/get-dashboard-data"]
+          },
+          {
+            "group": "WorkerInfo",
+            "pages": ["api-reference/endpoint/workerinfo/get-worker-infos"]
+          },
+          {
+            "group": "SubscriptionProduct",
+            "pages": [
+              "api-reference/endpoint/subscriptionproduct/craete-subscription-product",
+              "api-reference/endpoint/subscriptionproduct/update-subscription-product-published-state",
+              "api-reference/endpoint/subscriptionproduct/get-all-subscription-product",
+              "api-reference/endpoint/subscriptionproduct/get-display-subscription-product",
+              "api-reference/endpoint/subscriptionproduct/get-internal-subscription-product"
+            ]
+          },
+          {
+            "group": "StripePayment",
+            "pages": [
+              "api-reference/endpoint/stripepayment/create-stripe-checkout-session",
+              "api-reference/endpoint/stripepayment/create-stripe-customer-portal",
+              "api-reference/endpoint/stripepayment/cancel-stripe-subscription",
+              "api-reference/endpoint/stripepayment/post-api-referencev-stripepaymentwebhook",
+              "api-reference/endpoint/stripepayment/post-api-referencev-stripepaymenttestingwebhook"
+            ]
+          },
+          {
+            "group": "Subscription",
+            "pages": [
+              "api-reference/endpoint/subscription/create-subscription",
+              "api-reference/endpoint/subscription/get-user-active-subscriptions",
+              "api-reference/endpoint/subscription/get-user-subscriptions",
+              "api-reference/endpoint/subscription/get-my-active-subscriptions",
+              "api-reference/endpoint/subscription/get-my-subscriptions"
+            ]
+          },
+          {
+            "group": "Audits",
+            "pages": [
+              "api-reference/endpoint/audits/get-current-user-audit-trails",
+              "api-reference/endpoint/audits/search-audit-trails-and-export-to-excel"
+            ]
+          },
+          {
+            "group": "Preferences",
+            "pages": [
+              "api-reference/endpoint/preferences/change-language-preference"
+            ]
+          },
+          {
+            "group": "Account",
+            "pages": [
+              "api-reference/endpoint/account/update-profile",
+              "api-reference/endpoint/account/update-user-profile",
+              "api-reference/endpoint/account/get-my-profile",
+              "api-reference/endpoint/account/change-password"
+            ]
+          },
+          {
+            "group": "ApiKey",
+            "pages": [
+              "api-reference/endpoint/apikey/add-api-key",
+              "api-reference/endpoint/apikey/update-api-key-state",
+              "api-reference/endpoint/apikey/get-my-api-keys"
+            ]
+          },
+          {
+            "group": "Token",
+            "pages": [
+              "api-reference/endpoint/token/get-token-email-password",
+              "api-reference/endpoint/token/refresh-token"
+            ]
+          },
+          {
+            "group": "User",
+            "pages": [
+              "api-reference/endpoint/user/get-users-details",
+              "api-reference/endpoint/user/update-user-monthly-quota",
+              "api-reference/endpoint/user/get-user-by-id",
+              "api-reference/endpoint/user/get-user-roles-by-id",
+              "api-reference/endpoint/user/update-roles-for-user",
+              "api-reference/endpoint/user/create-a-user",
+              "api-reference/endpoint/user/register-a-user",
+              "api-reference/endpoint/user/confirm-email",
+              "api-reference/endpoint/user/toggle-user-status-activate-and-deactivate",
+              "api-reference/endpoint/user/forgot-password",
+              "api-reference/endpoint/user/reset-password",
+              "api-reference/endpoint/user/export-to-excel"
+            ]
+          },
+          {
+            "group": "InfoTask",
+            "pages": [
+              "api-reference/endpoint/infotask/get-my-info-tasks",
+              "api-reference/endpoint/infotask/get-my-info-task-by-id",
+              "api-reference/endpoint/infotask/get-my-info-task-by-bar-code",
+              "api-reference/endpoint/infotask/add-info-task",
+              "api-reference/endpoint/infotask/add-or-get-info-task",
+              "api-reference/endpoint/infotask/batch-add-info-task",
+              "api-reference/endpoint/infotask/get-and-assign-info-task",
+              "api-reference/endpoint/infotask/finish-info-task",
+              "api-reference/endpoint/infotask/get-my-usage"
+            ]
+          },
+          {
+            "group": "ScanTask",
+            "pages": [
+              "api-reference/endpoint/scantask/get-my-scan-tasks",
+              "api-reference/endpoint/scantask/get-my-scan-task-by-id",
+              "api-reference/endpoint/scantask/get-my-scan-task-by-bar-code",
+              "api-reference/endpoint/scantask/add-scan-task",
+              "api-reference/endpoint/scantask/add-or-get-scan-task",
+              "api-reference/endpoint/scantask/batch-add-scan-task",
+              "api-reference/endpoint/scantask/get-and-assign-scan-task",
+              "api-reference/endpoint/scantask/finish-scan-task",
+              "api-reference/endpoint/scantask/get-my-usage"
             ]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+    ]
   }
 }
