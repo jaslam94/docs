@@ -11,7 +11,7 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "InfoTask",
+        "tab": "Amazon - ATO.BARCODE.InfoTask",
         "groups": [
           {
             "group": "InfoTask",
@@ -30,7 +30,7 @@
         ]
       },
       {
-        "tab": "ScanTask",
+        "tab": "FNSKU to ASIN - ATO.BARCODE.ScanTask",
         "groups": [
           {
             "group": "ScanTask",
