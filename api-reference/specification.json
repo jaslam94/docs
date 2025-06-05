@@ -3,6 +3,7 @@
   "openapi": "3.0.0",
   "info": {
     "title": "ATO.BARCODE",
+    "description": "<h4>Baseurl: <strong>https://ato.fnskutoasin.com</strong></h4>",
     "version": "1.0.0"
   },
   "servers": [
@@ -16,6 +17,17 @@
         "tags": ["RoleClaim"],
         "summary": "Get All Role Claims(e.g. Product Create Permission)",
         "operationId": "RoleClaim_GetAll",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
         "responses": {
           "200": {
             "description": "Status 200 OK",
@@ -30,7 +42,7 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       },
@@ -38,6 +50,17 @@
         "tags": ["RoleClaim"],
         "summary": "Add a Role Claim",
         "operationId": "RoleClaim_Post",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
         "requestBody": {
           "x-name": "request",
           "content": {
@@ -64,7 +87,7 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
@@ -84,6 +107,15 @@
               "format": "guid"
             },
             "x-position": 1
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
           }
         ],
         "responses": {
@@ -100,7 +132,7 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
@@ -120,6 +152,15 @@
               "format": "int32"
             },
             "x-position": 1
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
           }
         ],
         "responses": {
@@ -136,7 +177,7 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
@@ -146,6 +187,17 @@
         "tags": ["Role"],
         "summary": "Get All Roles (basic, admin etc.)",
         "operationId": "Role_GetAll",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
         "responses": {
           "200": {
             "description": "Status 200 OK",
@@ -160,7 +212,7 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       },
@@ -168,6 +220,17 @@
         "tags": ["Role"],
         "summary": "Add a Role",
         "operationId": "Role_Post",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
         "requestBody": {
           "x-name": "request",
           "content": {
@@ -194,7 +257,7 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
@@ -213,6 +276,15 @@
               "type": "string"
             },
             "x-position": 1
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
           }
         ],
         "responses": {
@@ -229,7 +301,7 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
@@ -248,6 +320,15 @@
               "type": "string"
             },
             "x-position": 1
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
           }
         ],
         "responses": {
@@ -264,7 +345,7 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
@@ -274,6 +355,17 @@
         "tags": ["Role"],
         "summary": "Edit a Role Claim",
         "operationId": "Role_Update",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
         "requestBody": {
           "x-name": "model",
           "content": {
@@ -300,27 +392,16 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/Dashboard/GetData": {
+    "/v1/Dashboard/GetData": {
       "get": {
         "tags": ["Dashboard"],
         "summary": "Get Dashboard Data",
         "operationId": "Dashboard_GetData",
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 1
-          }
-        ],
         "responses": {
           "200": {
             "description": "Status 200 OK ",
@@ -335,12 +416,12 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/WorkerInfo/GetMy": {
+    "/v1/WorkerInfo/GetMy": {
       "get": {
         "tags": ["WorkerInfo"],
         "summary": "Get Worker Infos",
@@ -363,15 +444,6 @@
               "format": "int32"
             },
             "x-position": 2
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 3
           }
         ],
         "responses": {
@@ -388,27 +460,16 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/SubscriptionProduct/CreateSubscriptionProduct": {
+    "/v1/SubscriptionProduct/CreateSubscriptionProduct": {
       "post": {
         "tags": ["SubscriptionProduct"],
         "summary": "Craete subscription product",
         "operationId": "SubscriptionProduct_CreateSubscriptionProduct",
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 2
-          }
-        ],
         "requestBody": {
           "x-name": "command",
           "content": {
@@ -435,27 +496,16 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/SubscriptionProduct/UpdateSubscriptionProductPublishedState": {
+    "/v1/SubscriptionProduct/UpdateSubscriptionProductPublishedState": {
       "put": {
         "tags": ["SubscriptionProduct"],
         "summary": "Update Subscription Product Published State",
         "operationId": "SubscriptionProduct_UpdateSubscriptionProductPublishedState",
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 2
-          }
-        ],
         "requestBody": {
           "x-name": "command",
           "content": {
@@ -482,12 +532,12 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/SubscriptionProduct/Get": {
+    "/v1/SubscriptionProduct/Get": {
       "get": {
         "tags": ["SubscriptionProduct"],
         "summary": "Get all subscription product",
@@ -510,15 +560,6 @@
               "format": "int32"
             },
             "x-position": 2
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 3
           }
         ],
         "responses": {
@@ -535,27 +576,16 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/SubscriptionProduct/GetDisplay": {
+    "/v1/SubscriptionProduct/GetDisplay": {
       "get": {
         "tags": ["SubscriptionProduct"],
         "summary": "Get Display subscription product",
         "operationId": "SubscriptionProduct_GetDisplay",
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 1
-          }
-        ],
         "responses": {
           "200": {
             "description": "",
@@ -570,27 +600,16 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/SubscriptionProduct/GetInternal": {
+    "/v1/SubscriptionProduct/GetInternal": {
       "get": {
         "tags": ["SubscriptionProduct"],
         "summary": "Get Internal subscription product",
         "operationId": "SubscriptionProduct_GetInternal",
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 1
-          }
-        ],
         "responses": {
           "200": {
             "description": "",
@@ -605,27 +624,16 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/StripePayment/CreateCheckOutSession": {
+    "/v1/StripePayment/CreateCheckOutSession": {
       "post": {
         "tags": ["StripePayment"],
         "summary": "create stripe checkout session",
         "operationId": "StripePayment_CreateCheckOutSession",
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 2
-          }
-        ],
         "requestBody": {
           "x-name": "command",
           "content": {
@@ -652,27 +660,16 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/StripePayment/CreateStripeCustomerPortal": {
+    "/v1/StripePayment/CreateStripeCustomerPortal": {
       "post": {
         "tags": ["StripePayment"],
         "summary": "create stripe customer portal",
         "operationId": "StripePayment_CreateStripeCustomerPortal",
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 2
-          }
-        ],
         "requestBody": {
           "x-name": "command",
           "content": {
@@ -699,27 +696,16 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/StripePayment/CancelStripeSubscription": {
+    "/v1/StripePayment/CancelStripeSubscription": {
       "post": {
         "tags": ["StripePayment"],
         "summary": "cancel stripe subscription",
         "operationId": "StripePayment_CancelStripeSubscription",
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 2
-          }
-        ],
         "requestBody": {
           "x-name": "command",
           "content": {
@@ -746,26 +732,15 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/StripePayment/Webhook": {
+    "/v1/StripePayment/Webhook": {
       "post": {
         "tags": ["StripePayment"],
         "operationId": "StripePayment_Webhook",
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 1
-          }
-        ],
         "responses": {
           "200": {
             "description": "",
@@ -780,21 +755,10 @@
         }
       }
     },
-    "/v{version}/StripePayment/TestingWebhook": {
+    "/v1/StripePayment/TestingWebhook": {
       "post": {
         "tags": ["StripePayment"],
         "operationId": "StripePayment_TestingWebhook",
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 1
-          }
-        ],
         "responses": {
           "200": {
             "description": "",
@@ -809,22 +773,11 @@
         }
       }
     },
-    "/v{version}/Subscription/CreateInternalSubscription": {
+    "/v1/Subscription/CreateInternalSubscription": {
       "post": {
         "tags": ["Subscription"],
         "summary": "create subscription",
         "operationId": "Subscription_CreateInternalSubscription",
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 2
-          }
-        ],
         "requestBody": {
           "x-name": "command",
           "content": {
@@ -851,12 +804,12 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/Subscription/GetUserActiveSubscriptionPeriods": {
+    "/v1/Subscription/GetUserActiveSubscriptionPeriods": {
       "get": {
         "tags": ["Subscription"],
         "summary": "Get User Active Subscriptions",
@@ -870,15 +823,6 @@
               "format": "guid"
             },
             "x-position": 1
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 2
           }
         ],
         "responses": {
@@ -895,12 +839,12 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/Subscription/GetUserSubscriptionPeriods": {
+    "/v1/Subscription/GetUserSubscriptionPeriods": {
       "get": {
         "tags": ["Subscription"],
         "summary": "Get User Subscriptions",
@@ -932,15 +876,6 @@
               "format": "int32"
             },
             "x-position": 3
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 4
           }
         ],
         "responses": {
@@ -957,27 +892,16 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/Subscription/GetMyActiveSubscriptionPeriods": {
+    "/v1/Subscription/GetMyActiveSubscriptionPeriods": {
       "get": {
         "tags": ["Subscription"],
         "summary": "Get My Active Subscriptions",
         "operationId": "Subscription_GetMyActiveSubscriptionPeriods",
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 1
-          }
-        ],
         "responses": {
           "200": {
             "description": "",
@@ -992,12 +916,12 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/Subscription/GetMySubscriptionPeriods": {
+    "/v1/Subscription/GetMySubscriptionPeriods": {
       "get": {
         "tags": ["Subscription"],
         "summary": "Get My Subscriptions",
@@ -1029,15 +953,6 @@
               "format": "int32"
             },
             "x-position": 3
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 4
           }
         ],
         "responses": {
@@ -1054,7 +969,7 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
@@ -1064,6 +979,17 @@
         "tags": ["Audits"],
         "summary": "Get Current User Audit Trails",
         "operationId": "Audits_GetUserTrails",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
         "responses": {
           "200": {
             "description": "Status 200 OK",
@@ -1078,7 +1004,7 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
@@ -1116,6 +1042,15 @@
               "default": false
             },
             "x-position": 3
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 4
           }
         ],
         "responses": {
@@ -1132,7 +1067,7 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
@@ -1151,6 +1086,15 @@
               "nullable": true
             },
             "x-position": 1
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
           }
         ],
         "responses": {
@@ -1167,7 +1111,7 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
@@ -1177,6 +1121,17 @@
         "tags": ["Account"],
         "summary": "Update Profile",
         "operationId": "Account_UpdateProfile",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
         "requestBody": {
           "x-name": "model",
           "content": {
@@ -1203,7 +1158,7 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
@@ -1222,6 +1177,15 @@
               "format": "guid"
             },
             "x-position": 1
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 3
           }
         ],
         "requestBody": {
@@ -1250,7 +1214,7 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
@@ -1260,6 +1224,17 @@
         "tags": ["Account"],
         "summary": "Get My Profile",
         "operationId": "Account_GetMyProfile",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
         "responses": {
           "200": {
             "description": "Status 200 OK",
@@ -1274,7 +1249,7 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
@@ -1284,6 +1259,17 @@
         "tags": ["Account"],
         "summary": "Change Password",
         "operationId": "Account_ChangePassword",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
         "requestBody": {
           "x-name": "model",
           "content": {
@@ -1310,27 +1296,16 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/ApiKey/AddApiKey": {
+    "/v1/ApiKey/AddApiKey": {
       "post": {
         "tags": ["ApiKey"],
         "summary": "Add Api Key",
         "operationId": "ApiKey_AddApiKey",
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 2
-          }
-        ],
         "requestBody": {
           "x-name": "command",
           "content": {
@@ -1357,27 +1332,16 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/ApiKey/UpdateApiKeyState": {
+    "/v1/ApiKey/UpdateApiKeyState": {
       "put": {
         "tags": ["ApiKey"],
         "summary": "Update APi Key State",
         "operationId": "ApiKey_UpdateApiKeyState",
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 2
-          }
-        ],
         "requestBody": {
           "x-name": "command",
           "content": {
@@ -1404,12 +1368,12 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/ApiKey/GetMyApiKeys": {
+    "/v1/ApiKey/GetMyApiKeys": {
       "get": {
         "tags": ["ApiKey"],
         "summary": "Get My Api Keys",
@@ -1432,15 +1396,6 @@
               "format": "int32"
             },
             "x-position": 2
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 3
           }
         ],
         "responses": {
@@ -1457,7 +1412,7 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
@@ -1467,6 +1422,17 @@
         "tags": ["Token"],
         "summary": "Get Token (Email, Password)",
         "operationId": "Token_Post",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
         "requestBody": {
           "x-name": "model",
           "content": {
@@ -1498,6 +1464,17 @@
         "tags": ["Token"],
         "summary": "Refresh Token",
         "operationId": "Token_Refresh",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
         "requestBody": {
           "x-name": "model",
           "content": {
@@ -1529,6 +1506,17 @@
         "tags": ["User"],
         "summary": "Get Users Details",
         "operationId": "User_GetAll",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
         "responses": {
           "200": {
             "description": "Status 200 OK",
@@ -1543,7 +1531,7 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       },
@@ -1551,6 +1539,17 @@
         "tags": ["User"],
         "summary": "Update User Monthly Quota",
         "operationId": "User_UpdateUserMonthlyQuota",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
         "requestBody": {
           "x-name": "request",
           "content": {
@@ -1577,7 +1576,7 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
@@ -1597,6 +1596,15 @@
               "format": "guid"
             },
             "x-position": 1
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
           }
         ],
         "responses": {
@@ -1610,12 +1618,7 @@
               }
             }
           }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
+        }
       }
     },
     "/identity/user/roles/{id}": {
@@ -1632,6 +1635,15 @@
               "type": "string"
             },
             "x-position": 1
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
           }
         ],
         "responses": {
@@ -1648,7 +1660,7 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       },
@@ -1665,6 +1677,15 @@
               "type": "string"
             },
             "x-position": 2
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 3
           }
         ],
         "requestBody": {
@@ -1693,7 +1714,7 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
@@ -1703,6 +1724,17 @@
         "tags": ["User"],
         "summary": "Create a User",
         "operationId": "User_Createsync",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
         "requestBody": {
           "x-name": "request",
           "content": {
@@ -1729,7 +1761,7 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
@@ -1739,6 +1771,17 @@
         "tags": ["User"],
         "summary": "Register a User",
         "operationId": "User_Register",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
         "requestBody": {
           "x-name": "request",
           "content": {
@@ -1788,6 +1831,15 @@
               "nullable": true
             },
             "x-position": 2
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 3
           }
         ],
         "responses": {
@@ -1809,6 +1861,17 @@
         "tags": ["User"],
         "summary": "Toggle User Status (Activate and Deactivate)",
         "operationId": "User_ToggleUserStatus",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
         "requestBody": {
           "x-name": "request",
           "content": {
@@ -1832,12 +1895,7 @@
               }
             }
           }
-        },
-        "security": [
-          {
-            "Bearer": []
-          }
-        ]
+        }
       }
     },
     "/identity/user/forgot-password": {
@@ -1845,6 +1903,17 @@
         "tags": ["User"],
         "summary": "Forgot Password",
         "operationId": "User_ForgotPassword",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
         "requestBody": {
           "x-name": "request",
           "content": {
@@ -1876,6 +1945,17 @@
         "tags": ["User"],
         "summary": "Reset Password",
         "operationId": "User_ResetPassword",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
         "requestBody": {
           "x-name": "request",
           "content": {
@@ -1917,6 +1997,15 @@
               "nullable": true
             },
             "x-position": 1
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
           }
         ],
         "responses": {
@@ -1933,12 +2022,12 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/InfoTask/GetMy": {
+    "/v1/InfoTask/GetMy": {
       "get": {
         "tags": ["InfoTask"],
         "summary": "Get My Info Tasks",
@@ -1970,15 +2059,6 @@
               "format": "int32"
             },
             "x-position": 3
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 4
           }
         ],
         "responses": {
@@ -1995,12 +2075,12 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/InfoTask/GetMyById": {
+    "/v1/InfoTask/GetMyById": {
       "get": {
         "tags": ["InfoTask"],
         "summary": "Get My Info Task By Id",
@@ -2014,15 +2094,6 @@
               "format": "int64"
             },
             "x-position": 1
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 2
           }
         ],
         "responses": {
@@ -2031,20 +2102,21 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ResultOfInfoTaskResponse"
+                  "$ref": "#/components/schemas/ResultOfInfoTaskDetailsResponse"
                 }
               }
             }
           }
         },
+        "deprecated": true,
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/InfoTask/GetMyByBarCode": {
+    "/v1/InfoTask/GetMyByBarCode": {
       "get": {
         "tags": ["InfoTask"],
         "summary": "Get My Info Task By Bar Code",
@@ -2058,15 +2130,6 @@
               "nullable": true
             },
             "x-position": 1
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 2
           }
         ],
         "responses": {
@@ -2075,35 +2138,25 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ResultOfInfoTaskResponse"
+                  "$ref": "#/components/schemas/ResultOfInfoTaskDetailsResponse"
                 }
               }
             }
           }
         },
+        "deprecated": true,
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/InfoTask/Post": {
+    "/v1/InfoTask/Post": {
       "post": {
         "tags": ["InfoTask"],
         "summary": "Add Info Task",
         "operationId": "InfoTask_Post",
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 2
-          }
-        ],
         "requestBody": {
           "x-name": "command",
           "content": {
@@ -2128,29 +2181,19 @@
             }
           }
         },
+        "deprecated": true,
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/InfoTask/AddOrGet": {
+    "/v1/InfoTask/AddOrGet": {
       "post": {
         "tags": ["InfoTask"],
         "summary": "Add Or Get Info Task",
         "operationId": "InfoTask_AddOrGet",
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 2
-          }
-        ],
         "requestBody": {
           "x-name": "command",
           "content": {
@@ -2169,35 +2212,25 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ResultOfInfoTaskResponse"
+                  "$ref": "#/components/schemas/ResultOfInfoTaskDetailsResponse"
                 }
               }
             }
           }
         },
+        "deprecated": true,
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/InfoTask/Batch": {
+    "/v1/InfoTask/Batch": {
       "post": {
         "tags": ["InfoTask"],
         "summary": "Batch Add Info Task",
         "operationId": "InfoTask_Batch",
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 2
-          }
-        ],
         "requestBody": {
           "x-name": "command",
           "content": {
@@ -2222,14 +2255,15 @@
             }
           }
         },
+        "deprecated": true,
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/InfoTask/Assign": {
+    "/v1/InfoTask/Assign": {
       "post": {
         "tags": ["InfoTask"],
         "summary": "Get and assign Info task",
@@ -2245,11 +2279,10 @@
             "x-position": 1
           },
           {
-            "name": "version",
-            "in": "path",
-            "required": true,
+            "name": "InfoTaskProvider",
+            "in": "query",
             "schema": {
-              "type": "string"
+              "$ref": "#/components/schemas/InfoTaskProvider"
             },
             "x-position": 2
           }
@@ -2268,7 +2301,7 @@
         }
       }
     },
-    "/v{version}/InfoTask/Finish": {
+    "/v1/InfoTask/Finish": {
       "post": {
         "tags": ["InfoTask"],
         "summary": "Finish Info Task",
@@ -2282,15 +2315,6 @@
               "nullable": true
             },
             "x-position": 1
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 3
           }
         ],
         "requestBody": {
@@ -2316,25 +2340,15 @@
               }
             }
           }
-        }
+        },
+        "deprecated": true
       }
     },
-    "/v{version}/InfoTask/GetMyUsage": {
+    "/v1/InfoTask/GetMyUsage": {
       "get": {
         "tags": ["InfoTask"],
         "summary": "Get My Usage",
         "operationId": "InfoTask_GetMyUsage",
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 1
-          }
-        ],
         "responses": {
           "200": {
             "description": "Status 200 OK",
@@ -2349,12 +2363,335 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/ScanTask/GetMy": {
+    "/v2/InfoTask/GetMyById": {
+      "get": {
+        "tags": ["InfoTask"],
+        "summary": "Get My Info Task By Id",
+        "operationId": "InfoTask_GetMyById2",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfInfoTaskDictionaryResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v2/InfoTask/GetMyByBarCode": {
+      "get": {
+        "tags": ["InfoTask"],
+        "summary": "Get My Info Task By Bar Code",
+        "operationId": "InfoTask_GetMyByBarCode2",
+        "parameters": [
+          {
+            "name": "MainCode",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "Provider",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/InfoTaskProvider"
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfInfoTaskDictionaryResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v2/InfoTask/Post": {
+      "post": {
+        "tags": ["InfoTask"],
+        "summary": "Add Info Task",
+        "operationId": "InfoTask_Post2",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddInfoTasksV2Command"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfLong"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v2/InfoTask/AddOrGet": {
+      "post": {
+        "tags": ["InfoTask"],
+        "summary": "Add Or Get Info Task",
+        "operationId": "InfoTask_AddOrGet2",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddOrGetInfoTasksV2Command"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfInfoTaskDictionaryResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v2/InfoTask/Batch": {
+      "post": {
+        "tags": ["InfoTask"],
+        "summary": "Batch Add Info Task",
+        "operationId": "InfoTask_Batch2",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BatchAddInfoTasksV2Command"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfLong"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v2/InfoTask/Finish": {
+      "post": {
+        "tags": ["InfoTask"],
+        "summary": "Finish Info Task",
+        "operationId": "InfoTask_Finish2",
+        "parameters": [
+          {
+            "name": "apiKey",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FinnishInfoTaskV2CommandOfJsonDocument"
+              },
+              "examples": {
+                "Amazon": {
+                  "value": {
+                    "mainCode": "Asin",
+                    "provider": 0,
+                    "details": {
+                      "asin": "Asin",
+                      "title": "Title",
+                      "price": "Price",
+                      "format": "Format",
+                      "retailPrice": "RetailPrice",
+                      "offerCount": "OfferCount",
+                      "weight": "Weight",
+                      "dimensions": "Dimensions",
+                      "shippedBy": "ShippedBy",
+                      "priceAndFreeShipping": "PriceAndFreeShipping",
+                      "category": "Category",
+                      "priceAndSpecificShipping": "PriceAndSpecificShipping",
+                      "upc": "UPC",
+                      "imageOneUrl": "ImageOneUrl",
+                      "imageTwoUrl": "ImageTwoUrl",
+                      "imageThreeUrl": "ImageThreeUrl",
+                      "imageFourUrl": "ImageFourUrl",
+                      "imageFiveUrl": "ImageFiveUrl",
+                      "imageSixUrl": "ImageSixUrl",
+                      "condition": "Condition",
+                      "rating": "Rating",
+                      "numberOfRatings": "NumberOfRatings"
+                    }
+                  }
+                },
+                "Walmart": {
+                  "value": {
+                    "mainCode": "MainCode",
+                    "provider": 1,
+                    "details": {
+                      "name": "Name",
+                      "category": "Category",
+                      "description": "Description",
+                      "brand": "Brand",
+                      "price": "Price",
+                      "availabilityStatus": "AvailabilityStatus",
+                      "averageRating": "AverageRating",
+                      "numberOfReviews": "NumberOfReviews",
+                      "link": "Link",
+                      "imageOneUrl": "ImageOneUrl",
+                      "imageTwoUrl": "ImageTwoUrl",
+                      "imageThreeUrl": "ImageThreeUrl",
+                      "imageFourUrl": "ImageFourUrl",
+                      "imageFiveUrl": "ImageFiveUrl",
+                      "imageSixUrl": "ImageSixUrl"
+                    }
+                  }
+                },
+                "Homedepot": {
+                  "value": {
+                    "mainCode": "MainCode",
+                    "provider": 2,
+                    "details": {
+                      "title": "Title",
+                      "price": "Price",
+                      "category": "Category",
+                      "internetBarcode": "InternetBarcode",
+                      "modelNumber": "ModelNumber",
+                      "storeBarcode": "StoreBarcode",
+                      "imageUrl": "ImageUrl",
+                      "imageOneUrl": "ImageOneUrl",
+                      "imageTwoUrl": "ImageTwoUrl",
+                      "imageThreeUrl": "ImageThreeUrl",
+                      "imageFourUrl": "ImageFourUrl",
+                      "imageFiveUrl": "ImageFiveUrl",
+                      "imageSixUrl": "ImageSixUrl"
+                    }
+                  }
+                },
+                "Target": {
+                  "value": {
+                    "mainCode": "MainCode",
+                    "provider": 3,
+                    "details": {
+                      "name": "Name",
+                      "brand": "Brand",
+                      "price": "Price",
+                      "category": "Category",
+                      "retailerBarcode": "RetailerBarcode",
+                      "imageOneUrl": "ImageOneUrl",
+                      "imageTwoUrl": "ImageTwoUrl",
+                      "imageThreeUrl": "ImageThreeUrl",
+                      "imageFourUrl": "ImageFourUrl",
+                      "imageFiveUrl": "ImageFiveUrl",
+                      "imageSixUrl": "ImageSixUrl"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true,
+          "x-position": 2
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfLong"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/ScanTask/GetMy": {
       "get": {
         "tags": ["ScanTask"],
         "summary": "Get My Scan Tasks",
@@ -2386,15 +2723,6 @@
               "format": "int32"
             },
             "x-position": 3
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 4
           }
         ],
         "responses": {
@@ -2411,12 +2739,12 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/ScanTask/GetMyById": {
+    "/v1/ScanTask/GetMyById": {
       "get": {
         "tags": ["ScanTask"],
         "summary": "Get My Scan Task By Id",
@@ -2430,15 +2758,6 @@
               "format": "int64"
             },
             "x-position": 1
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 2
           }
         ],
         "responses": {
@@ -2455,12 +2774,12 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/ScanTask/GetMyByBarCode": {
+    "/v1/ScanTask/GetMyByBarCode": {
       "get": {
         "tags": ["ScanTask"],
         "summary": "Get My Scan Task By Bar Code",
@@ -2474,15 +2793,6 @@
               "nullable": true
             },
             "x-position": 1
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 2
           }
         ],
         "responses": {
@@ -2499,27 +2809,16 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/ScanTask/Post": {
+    "/v1/ScanTask/Post": {
       "post": {
         "tags": ["ScanTask"],
         "summary": "Add Scan Task",
         "operationId": "ScanTask_Post",
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 2
-          }
-        ],
         "requestBody": {
           "x-name": "command",
           "content": {
@@ -2546,27 +2845,16 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/ScanTask/AddOrGet": {
+    "/v1/ScanTask/AddOrGet": {
       "post": {
         "tags": ["ScanTask"],
         "summary": "Add Or Get Scan Task",
         "operationId": "ScanTask_AddOrGet",
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 2
-          }
-        ],
         "requestBody": {
           "x-name": "command",
           "content": {
@@ -2593,27 +2881,16 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/ScanTask/Batch": {
+    "/v1/ScanTask/Batch": {
       "post": {
         "tags": ["ScanTask"],
         "summary": "Batch Add Scan Task",
         "operationId": "ScanTask_Batch",
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 2
-          }
-        ],
         "requestBody": {
           "x-name": "command",
           "content": {
@@ -2640,12 +2917,12 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
     },
-    "/v{version}/ScanTask/Assign": {
+    "/v1/ScanTask/Assign": {
       "post": {
         "tags": ["ScanTask"],
         "summary": "Get and assign scan task",
@@ -2668,15 +2945,6 @@
               "nullable": true
             },
             "x-position": 2
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 3
           }
         ],
         "responses": {
@@ -2693,7 +2961,7 @@
         }
       }
     },
-    "/v{version}/ScanTask/Finish": {
+    "/v1/ScanTask/Finish": {
       "post": {
         "tags": ["ScanTask"],
         "summary": "Finish SCan Task",
@@ -2707,15 +2975,6 @@
               "nullable": true
             },
             "x-position": 1
-          },
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 3
           }
         ],
         "requestBody": {
@@ -2744,22 +3003,11 @@
         }
       }
     },
-    "/v{version}/ScanTask/GetMyUsage": {
+    "/v1/ScanTask/GetMyUsage": {
       "get": {
         "tags": ["ScanTask"],
         "summary": "Get My Usage",
         "operationId": "ScanTask_GetMyUsage",
-        "parameters": [
-          {
-            "name": "version",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "x-position": 1
-          }
-        ],
         "responses": {
           "200": {
             "description": "Status 200 OK",
@@ -2774,7 +3022,7 @@
         },
         "security": [
           {
-            "Bearer": []
+            "ApiKey": []
           }
         ]
       }
@@ -4530,6 +4778,100 @@
             "type": "string",
             "nullable": true
           },
+          "mainCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "secondaryCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "provider": {
+            "$ref": "#/components/schemas/InfoTaskProvider"
+          },
+          "taskState": {
+            "$ref": "#/components/schemas/TaskState"
+          },
+          "assignmentDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "finishedOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "createdOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "duration": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "processingDuration": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        }
+      },
+      "InfoTaskProvider": {
+        "type": "integer",
+        "description": "0 = Amazon\n1 = Walmart\n2 = Homedepot\n3 = Target",
+        "x-enumNames": ["Amazon", "Walmart", "Homedepot", "Target"],
+        "enum": [0, 1, 2, 3]
+      },
+      "TaskState": {
+        "type": "integer",
+        "description": "0 = Pending\n1 = Finished\n2 = Failed",
+        "x-enumNames": ["Pending", "Finished", "Failed"],
+        "enum": [0, 1, 2]
+      },
+      "ResultOfInfoTaskDetailsResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/InfoTaskDetailsResponse"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "InfoTaskDetailsResponse": {
+        "type": "object",
+        "deprecated": true,
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "userId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "user": {
+            "type": "string",
+            "nullable": true
+          },
           "title": {
             "type": "string",
             "nullable": true
@@ -4647,35 +4989,9 @@
           }
         }
       },
-      "TaskState": {
-        "type": "integer",
-        "description": "0 = Pending\n1 = Finished\n2 = Failed",
-        "x-enumNames": ["Pending", "Finished", "Failed"],
-        "enum": [0, 1, 2]
-      },
-      "ResultOfInfoTaskResponse": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Result"
-          },
-          {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "data": {
-                "nullable": true,
-                "oneOf": [
-                  {
-                    "$ref": "#/components/schemas/InfoTaskResponse"
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
       "AddInfoTasksCommand": {
         "type": "object",
+        "deprecated": true,
         "additionalProperties": false,
         "required": ["asin"],
         "properties": {
@@ -4691,6 +5007,7 @@
       },
       "AddOrGetInfoTasksCommand": {
         "type": "object",
+        "deprecated": true,
         "additionalProperties": false,
         "required": ["asin"],
         "properties": {
@@ -4706,6 +5023,7 @@
       },
       "BatchAddInfoTasksCommand": {
         "type": "object",
+        "deprecated": true,
         "additionalProperties": false,
         "required": ["asins"],
         "properties": {
@@ -4723,6 +5041,7 @@
       },
       "FinnishInfoTaskCommand": {
         "type": "object",
+        "deprecated": true,
         "additionalProperties": false,
         "required": ["asin"],
         "properties": {
@@ -4849,6 +5168,169 @@
             "type": "integer",
             "format": "int64"
           }
+        }
+      },
+      "ResultOfInfoTaskDictionaryResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/InfoTaskDictionaryResponse"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "InfoTaskDictionaryResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "userId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "user": {
+            "type": "string",
+            "nullable": true
+          },
+          "mainCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "provider": {
+            "$ref": "#/components/schemas/InfoTaskProvider"
+          },
+          "details": {
+            "type": "object",
+            "nullable": true,
+            "additionalProperties": {}
+          },
+          "taskState": {
+            "$ref": "#/components/schemas/TaskState"
+          },
+          "assignmentDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "finishedOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "createdOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "duration": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "processingDuration": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        }
+      },
+      "AddInfoTasksV2Command": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["mainCode"],
+        "properties": {
+          "mainCode": {
+            "type": "string",
+            "minLength": 1
+          },
+          "provider": {
+            "$ref": "#/components/schemas/InfoTaskProvider"
+          },
+          "callBackUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "AddOrGetInfoTasksV2Command": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["mainCode"],
+        "properties": {
+          "mainCode": {
+            "type": "string",
+            "minLength": 1
+          },
+          "provider": {
+            "$ref": "#/components/schemas/InfoTaskProvider"
+          },
+          "callBackUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "BatchAddInfoTasksV2Command": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["mainCodes"],
+        "properties": {
+          "mainCodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "provider": {
+            "$ref": "#/components/schemas/InfoTaskProvider"
+          },
+          "callBackUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "FinnishInfoTaskV2CommandOfJsonDocument": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["mainCode"],
+        "properties": {
+          "mainCode": {
+            "type": "string",
+            "minLength": 1
+          },
+          "provider": {
+            "$ref": "#/components/schemas/InfoTaskProvider"
+          },
+          "details": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/JsonDocument"
+              }
+            ]
+          }
+        }
+      },
+      "JsonDocument": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "rootElement": {}
         }
       },
       "PaginatedResultOfScanTaskResponse": {
@@ -5076,9 +5558,12 @@
       }
     },
     "securitySchemes": {
-      "Bearer": {
-        "type": "http",
-        "scheme": "bearer"
+      "ApiKey": {
+        "type": "apiKey",
+        "description": "Api key header. Example: \"Api-Key: {key}\"",
+        "name": "Api-Key",
+        "in": "header",
+        "scheme": "ApiKey"
       }
     }
   }
