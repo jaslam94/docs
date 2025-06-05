@@ -1,0 +1,5568 @@
+{
+  "x-generator": "NSwag v13.19.0.0 (NJsonSchema v10.9.0.0 (Newtonsoft.Json v13.0.0.0))",
+  "openapi": "3.0.0",
+  "info": {
+    "title": "ATO.BARCODE",
+    "description": "<h4>Baseurl: <strong>https://ato.fnskutoasin.com</strong></h4>",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://ato.fnskutoasin.com/api"
+    }
+  ],
+  "paths": {
+    "/identity/roleClaim": {
+      "get": {
+        "tags": ["RoleClaim"],
+        "summary": "Get All Role Claims(e.g. Product Create Permission)",
+        "operationId": "RoleClaim_GetAll",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfListOfRoleClaimResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      },
+      "post": {
+        "tags": ["RoleClaim"],
+        "summary": "Add a Role Claim",
+        "operationId": "RoleClaim_Post",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "requestBody": {
+          "x-name": "request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RoleClaimRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK ",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfString"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/identity/roleClaim/{roleId}": {
+      "get": {
+        "tags": ["RoleClaim"],
+        "summary": "Get All Role Claims By Id",
+        "operationId": "RoleClaim_GetAllByRoleId",
+        "parameters": [
+          {
+            "name": "roleId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfListOfRoleClaimResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/identity/roleClaim/{id}": {
+      "delete": {
+        "tags": ["RoleClaim"],
+        "summary": "Delete a Role Claim",
+        "operationId": "RoleClaim_Delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfString"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/identity/role": {
+      "get": {
+        "tags": ["Role"],
+        "summary": "Get All Roles (basic, admin etc.)",
+        "operationId": "Role_GetAll",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfListOfRoleResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      },
+      "post": {
+        "tags": ["Role"],
+        "summary": "Add a Role",
+        "operationId": "Role_Post",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "requestBody": {
+          "x-name": "request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RoleRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfString"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/identity/role/{id}": {
+      "delete": {
+        "tags": ["Role"],
+        "summary": "Delete a Role",
+        "operationId": "Role_Delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfString"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/identity/role/permissions/{roleId}": {
+      "get": {
+        "tags": ["Role"],
+        "summary": "Get Permissions By Role Id",
+        "operationId": "Role_GetPermissionsByRoleId",
+        "parameters": [
+          {
+            "name": "roleId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfPermissionResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/identity/role/permissions/update": {
+      "put": {
+        "tags": ["Role"],
+        "summary": "Edit a Role Claim",
+        "operationId": "Role_Update",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "requestBody": {
+          "x-name": "model",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PermissionRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfString"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/Dashboard/GetData": {
+      "get": {
+        "tags": ["Dashboard"],
+        "summary": "Get Dashboard Data",
+        "operationId": "Dashboard_GetData",
+        "responses": {
+          "200": {
+            "description": "Status 200 OK ",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfDashboardDataResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/WorkerInfo/GetMy": {
+      "get": {
+        "tags": ["WorkerInfo"],
+        "summary": "Get Worker Infos",
+        "operationId": "WorkerInfo_GetMy",
+        "parameters": [
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "PageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedResultOfWorkerInfoResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/SubscriptionProduct/CreateSubscriptionProduct": {
+      "post": {
+        "tags": ["SubscriptionProduct"],
+        "summary": "Craete subscription product",
+        "operationId": "SubscriptionProduct_CreateSubscriptionProduct",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddSubscriptionProductCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfLong"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/SubscriptionProduct/UpdateSubscriptionProductPublishedState": {
+      "put": {
+        "tags": ["SubscriptionProduct"],
+        "summary": "Update Subscription Product Published State",
+        "operationId": "SubscriptionProduct_UpdateSubscriptionProductPublishedState",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateSubscriptionProductPublishedStateCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfLong"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/SubscriptionProduct/Get": {
+      "get": {
+        "tags": ["SubscriptionProduct"],
+        "summary": "Get all subscription product",
+        "operationId": "SubscriptionProduct_Get",
+        "parameters": [
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "PageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedResultOfSubscriptionProductResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/SubscriptionProduct/GetDisplay": {
+      "get": {
+        "tags": ["SubscriptionProduct"],
+        "summary": "Get Display subscription product",
+        "operationId": "SubscriptionProduct_GetDisplay",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfListOfDisplaySubscriptionProductResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/SubscriptionProduct/GetInternal": {
+      "get": {
+        "tags": ["SubscriptionProduct"],
+        "summary": "Get Internal subscription product",
+        "operationId": "SubscriptionProduct_GetInternal",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfListOfDisplaySubscriptionProductResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/StripePayment/CreateCheckOutSession": {
+      "post": {
+        "tags": ["StripePayment"],
+        "summary": "create stripe checkout session",
+        "operationId": "StripePayment_CreateCheckOutSession",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateStripeCheckoutSessionCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfCreateStripeCheckoutSessionResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/StripePayment/CreateStripeCustomerPortal": {
+      "post": {
+        "tags": ["StripePayment"],
+        "summary": "create stripe customer portal",
+        "operationId": "StripePayment_CreateStripeCustomerPortal",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateStripeCustomerPortalCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfCreateStripeCustomerPortalResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/StripePayment/CancelStripeSubscription": {
+      "post": {
+        "tags": ["StripePayment"],
+        "summary": "cancel stripe subscription",
+        "operationId": "StripePayment_CancelStripeSubscription",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CancelStripeSubscriptionCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/StripePayment/Webhook": {
+      "post": {
+        "tags": ["StripePayment"],
+        "operationId": "StripePayment_Webhook",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/StripePayment/TestingWebhook": {
+      "post": {
+        "tags": ["StripePayment"],
+        "operationId": "StripePayment_TestingWebhook",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/Subscription/CreateInternalSubscription": {
+      "post": {
+        "tags": ["Subscription"],
+        "summary": "create subscription",
+        "operationId": "Subscription_CreateInternalSubscription",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddInternalUserSubscriptionCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfLong"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/Subscription/GetUserActiveSubscriptionPeriods": {
+      "get": {
+        "tags": ["Subscription"],
+        "summary": "Get User Active Subscriptions",
+        "operationId": "Subscription_GetUserActiveSubscriptionPeriods",
+        "parameters": [
+          {
+            "name": "UserId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfListOfUserSubscriptionPeriodResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/Subscription/GetUserSubscriptionPeriods": {
+      "get": {
+        "tags": ["Subscription"],
+        "summary": "Get User Subscriptions",
+        "operationId": "Subscription_GetUserSubscriptionPeriods",
+        "parameters": [
+          {
+            "name": "UserId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 2
+          },
+          {
+            "name": "PageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 3
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedResultOfUserSubscriptionPeriodResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/Subscription/GetMyActiveSubscriptionPeriods": {
+      "get": {
+        "tags": ["Subscription"],
+        "summary": "Get My Active Subscriptions",
+        "operationId": "Subscription_GetMyActiveSubscriptionPeriods",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfListOfUserSubscriptionPeriodResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/Subscription/GetMySubscriptionPeriods": {
+      "get": {
+        "tags": ["Subscription"],
+        "summary": "Get My Subscriptions",
+        "operationId": "Subscription_GetMySubscriptionPeriods",
+        "parameters": [
+          {
+            "name": "UserId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 2
+          },
+          {
+            "name": "PageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 3
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedResultOfUserSubscriptionPeriodResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/Audits": {
+      "get": {
+        "tags": ["Audits"],
+        "summary": "Get Current User Audit Trails",
+        "operationId": "Audits_GetUserTrails",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfIEnumerableOfAuditResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/Audits/export": {
+      "get": {
+        "tags": ["Audits"],
+        "summary": "Search Audit Trails and Export to Excel",
+        "operationId": "Audits_ExportExcel",
+        "parameters": [
+          {
+            "name": "searchString",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "searchInOldValues",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            },
+            "x-position": 2
+          },
+          {
+            "name": "searchInNewValues",
+            "in": "query",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            },
+            "x-position": 3
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 4
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfString"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/Preferences/changeLanguage": {
+      "post": {
+        "tags": ["Preferences"],
+        "summary": "Change Language Preference",
+        "operationId": "Preferences_ChangeLanguage",
+        "parameters": [
+          {
+            "name": "languageCode",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/identity/account/UpdateProfile": {
+      "put": {
+        "tags": ["Account"],
+        "summary": "Update Profile",
+        "operationId": "Account_UpdateProfile",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "requestBody": {
+          "x-name": "model",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateProfileRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/identity/account": {
+      "put": {
+        "tags": ["Account"],
+        "summary": "Update User Profile",
+        "operationId": "Account_UpdateUserProfile",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 3
+          }
+        ],
+        "requestBody": {
+          "x-name": "model",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateProfileRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 2
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/identity/account/GetMyProfile": {
+      "get": {
+        "tags": ["Account"],
+        "summary": "Get My Profile",
+        "operationId": "Account_GetMyProfile",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfProfileResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/identity/account/ChangePassword": {
+      "put": {
+        "tags": ["Account"],
+        "summary": "Change Password",
+        "operationId": "Account_ChangePassword",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "requestBody": {
+          "x-name": "model",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangePasswordRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/ApiKey/AddApiKey": {
+      "post": {
+        "tags": ["ApiKey"],
+        "summary": "Add Api Key",
+        "operationId": "ApiKey_AddApiKey",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddApiKeyCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfApiKeyResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/ApiKey/UpdateApiKeyState": {
+      "put": {
+        "tags": ["ApiKey"],
+        "summary": "Update APi Key State",
+        "operationId": "ApiKey_UpdateApiKeyState",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChangeApiKeyStateCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfLong"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/ApiKey/GetMyApiKeys": {
+      "get": {
+        "tags": ["ApiKey"],
+        "summary": "Get My Api Keys",
+        "operationId": "ApiKey_GetMyApiKeys",
+        "parameters": [
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "PageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedResultOfApiKeyResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/identity/token": {
+      "post": {
+        "tags": ["Token"],
+        "summary": "Get Token (Email, Password)",
+        "operationId": "Token_Post",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "requestBody": {
+          "x-name": "model",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TokenRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfTokenResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/identity/token/refresh": {
+      "post": {
+        "tags": ["Token"],
+        "summary": "Refresh Token",
+        "operationId": "Token_Refresh",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "requestBody": {
+          "x-name": "model",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RefreshTokenRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfTokenResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/identity/user": {
+      "get": {
+        "tags": ["User"],
+        "summary": "Get Users Details",
+        "operationId": "User_GetAll",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfListOfUserResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      },
+      "put": {
+        "tags": ["User"],
+        "summary": "Update User Monthly Quota",
+        "operationId": "User_UpdateUserMonthlyQuota",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "requestBody": {
+          "x-name": "request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserMonthlyQuotaRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/identity/user/{id}": {
+      "get": {
+        "tags": ["User"],
+        "summary": "Get User By Id",
+        "operationId": "User_GetById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "guid"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfUserResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/identity/user/roles/{id}": {
+      "get": {
+        "tags": ["User"],
+        "summary": "Get User Roles By Id",
+        "operationId": "User_GetRoles",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfUserRolesResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      },
+      "put": {
+        "tags": ["User"],
+        "summary": "Update Roles for User",
+        "operationId": "User_UpdateRoles",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "x-position": 2
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 3
+          }
+        ],
+        "requestBody": {
+          "x-name": "request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserRolesRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/identity/user/create": {
+      "post": {
+        "tags": ["User"],
+        "summary": "Create a User",
+        "operationId": "User_Createsync",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "requestBody": {
+          "x-name": "request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/identity/user/register": {
+      "post": {
+        "tags": ["User"],
+        "summary": "Register a User",
+        "operationId": "User_Register",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "requestBody": {
+          "x-name": "request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/identity/user/confirm-email": {
+      "get": {
+        "tags": ["User"],
+        "summary": "Confirm Email",
+        "operationId": "User_ConfirmEmail",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "code",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 3
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfGuid"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/identity/user/toggle-status": {
+      "post": {
+        "tags": ["User"],
+        "summary": "Toggle User Status (Activate and Deactivate)",
+        "operationId": "User_ToggleUserStatus",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "requestBody": {
+          "x-name": "request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ToggleUserStatusRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/identity/user/forgot-password": {
+      "post": {
+        "tags": ["User"],
+        "summary": "Forgot Password",
+        "operationId": "User_ForgotPassword",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "requestBody": {
+          "x-name": "request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ForgotPasswordRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/identity/user/reset-password": {
+      "post": {
+        "tags": ["User"],
+        "summary": "Reset Password",
+        "operationId": "User_ResetPassword",
+        "parameters": [
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "requestBody": {
+          "x-name": "request",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResetPasswordRequest"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Result"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/identity/user/export": {
+      "get": {
+        "tags": ["User"],
+        "summary": "Export to Excel",
+        "operationId": "User_Export",
+        "parameters": [
+          {
+            "name": "searchString",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "default": "",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/InfoTask/GetMy": {
+      "get": {
+        "tags": ["InfoTask"],
+        "summary": "Get My Info Tasks",
+        "operationId": "InfoTask_GetMy",
+        "parameters": [
+          {
+            "name": "SearchString",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 2
+          },
+          {
+            "name": "PageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 3
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedResultOfInfoTaskResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/InfoTask/GetMyById": {
+      "get": {
+        "tags": ["InfoTask"],
+        "summary": "Get My Info Task By Id",
+        "operationId": "InfoTask_GetMyById",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfInfoTaskDetailsResponse"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true,
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/InfoTask/GetMyByBarCode": {
+      "get": {
+        "tags": ["InfoTask"],
+        "summary": "Get My Info Task By Bar Code",
+        "operationId": "InfoTask_GetMyByBarCode",
+        "parameters": [
+          {
+            "name": "Asin",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfInfoTaskDetailsResponse"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true,
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/InfoTask/Post": {
+      "post": {
+        "tags": ["InfoTask"],
+        "summary": "Add Info Task",
+        "operationId": "InfoTask_Post",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddInfoTasksCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfLong"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true,
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/InfoTask/AddOrGet": {
+      "post": {
+        "tags": ["InfoTask"],
+        "summary": "Add Or Get Info Task",
+        "operationId": "InfoTask_AddOrGet",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddOrGetInfoTasksCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfInfoTaskDetailsResponse"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true,
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/InfoTask/Batch": {
+      "post": {
+        "tags": ["InfoTask"],
+        "summary": "Batch Add Info Task",
+        "operationId": "InfoTask_Batch",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BatchAddInfoTasksCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfLong"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true,
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/InfoTask/Assign": {
+      "post": {
+        "tags": ["InfoTask"],
+        "summary": "Get and assign Info task",
+        "operationId": "InfoTask_Assign",
+        "parameters": [
+          {
+            "name": "apiKey",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "InfoTaskProvider",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/InfoTaskProvider"
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfString"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/InfoTask/Finish": {
+      "post": {
+        "tags": ["InfoTask"],
+        "summary": "Finish Info Task",
+        "operationId": "InfoTask_Finish",
+        "parameters": [
+          {
+            "name": "apiKey",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FinnishInfoTaskCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 2
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfLong"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true
+      }
+    },
+    "/v1/InfoTask/GetMyUsage": {
+      "get": {
+        "tags": ["InfoTask"],
+        "summary": "Get My Usage",
+        "operationId": "InfoTask_GetMyUsage",
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfMyInfoTasksUsageResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v2/InfoTask/GetMyById": {
+      "get": {
+        "tags": ["InfoTask"],
+        "summary": "Get My Info Task By Id",
+        "operationId": "InfoTask_GetMyById2",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfInfoTaskDictionaryResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v2/InfoTask/GetMyByBarCode": {
+      "get": {
+        "tags": ["InfoTask"],
+        "summary": "Get My Info Task By Bar Code",
+        "operationId": "InfoTask_GetMyByBarCode2",
+        "parameters": [
+          {
+            "name": "MainCode",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "Provider",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/InfoTaskProvider"
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfInfoTaskDictionaryResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v2/InfoTask/Post": {
+      "post": {
+        "tags": ["InfoTask"],
+        "summary": "Add Info Task",
+        "operationId": "InfoTask_Post2",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddInfoTasksV2Command"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfLong"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v2/InfoTask/AddOrGet": {
+      "post": {
+        "tags": ["InfoTask"],
+        "summary": "Add Or Get Info Task",
+        "operationId": "InfoTask_AddOrGet2",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddOrGetInfoTasksV2Command"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfInfoTaskDictionaryResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v2/InfoTask/Batch": {
+      "post": {
+        "tags": ["InfoTask"],
+        "summary": "Batch Add Info Task",
+        "operationId": "InfoTask_Batch2",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BatchAddInfoTasksV2Command"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfLong"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v2/InfoTask/Finish": {
+      "post": {
+        "tags": ["InfoTask"],
+        "summary": "Finish Info Task",
+        "operationId": "InfoTask_Finish2",
+        "parameters": [
+          {
+            "name": "apiKey",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FinnishInfoTaskV2CommandOfJsonDocument"
+              },
+              "examples": {
+                "Amazon": {
+                  "value": {
+                    "mainCode": "Asin",
+                    "provider": 0,
+                    "details": {
+                      "asin": "Asin",
+                      "title": "Title",
+                      "price": "Price",
+                      "format": "Format",
+                      "retailPrice": "RetailPrice",
+                      "offerCount": "OfferCount",
+                      "weight": "Weight",
+                      "dimensions": "Dimensions",
+                      "shippedBy": "ShippedBy",
+                      "priceAndFreeShipping": "PriceAndFreeShipping",
+                      "category": "Category",
+                      "priceAndSpecificShipping": "PriceAndSpecificShipping",
+                      "upc": "UPC",
+                      "imageOneUrl": "ImageOneUrl",
+                      "imageTwoUrl": "ImageTwoUrl",
+                      "imageThreeUrl": "ImageThreeUrl",
+                      "imageFourUrl": "ImageFourUrl",
+                      "imageFiveUrl": "ImageFiveUrl",
+                      "imageSixUrl": "ImageSixUrl",
+                      "condition": "Condition",
+                      "rating": "Rating",
+                      "numberOfRatings": "NumberOfRatings"
+                    }
+                  }
+                },
+                "Walmart": {
+                  "value": {
+                    "mainCode": "MainCode",
+                    "provider": 1,
+                    "details": {
+                      "name": "Name",
+                      "category": "Category",
+                      "description": "Description",
+                      "brand": "Brand",
+                      "price": "Price",
+                      "availabilityStatus": "AvailabilityStatus",
+                      "averageRating": "AverageRating",
+                      "numberOfReviews": "NumberOfReviews",
+                      "link": "Link",
+                      "imageOneUrl": "ImageOneUrl",
+                      "imageTwoUrl": "ImageTwoUrl",
+                      "imageThreeUrl": "ImageThreeUrl",
+                      "imageFourUrl": "ImageFourUrl",
+                      "imageFiveUrl": "ImageFiveUrl",
+                      "imageSixUrl": "ImageSixUrl"
+                    }
+                  }
+                },
+                "Homedepot": {
+                  "value": {
+                    "mainCode": "MainCode",
+                    "provider": 2,
+                    "details": {
+                      "title": "Title",
+                      "price": "Price",
+                      "category": "Category",
+                      "internetBarcode": "InternetBarcode",
+                      "modelNumber": "ModelNumber",
+                      "storeBarcode": "StoreBarcode",
+                      "imageUrl": "ImageUrl",
+                      "imageOneUrl": "ImageOneUrl",
+                      "imageTwoUrl": "ImageTwoUrl",
+                      "imageThreeUrl": "ImageThreeUrl",
+                      "imageFourUrl": "ImageFourUrl",
+                      "imageFiveUrl": "ImageFiveUrl",
+                      "imageSixUrl": "ImageSixUrl"
+                    }
+                  }
+                },
+                "Target": {
+                  "value": {
+                    "mainCode": "MainCode",
+                    "provider": 3,
+                    "details": {
+                      "name": "Name",
+                      "brand": "Brand",
+                      "price": "Price",
+                      "category": "Category",
+                      "retailerBarcode": "RetailerBarcode",
+                      "imageOneUrl": "ImageOneUrl",
+                      "imageTwoUrl": "ImageTwoUrl",
+                      "imageThreeUrl": "ImageThreeUrl",
+                      "imageFourUrl": "ImageFourUrl",
+                      "imageFiveUrl": "ImageFiveUrl",
+                      "imageSixUrl": "ImageSixUrl"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": true,
+          "x-position": 2
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfLong"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/ScanTask/GetMy": {
+      "get": {
+        "tags": ["ScanTask"],
+        "summary": "Get My Scan Tasks",
+        "operationId": "ScanTask_GetMy",
+        "parameters": [
+          {
+            "name": "SearchString",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 2
+          },
+          {
+            "name": "PageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 3
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginatedResultOfScanTaskResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/ScanTask/GetMyById": {
+      "get": {
+        "tags": ["ScanTask"],
+        "summary": "Get My Scan Task By Id",
+        "operationId": "ScanTask_GetMyById",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfScanTaskResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/ScanTask/GetMyByBarCode": {
+      "get": {
+        "tags": ["ScanTask"],
+        "summary": "Get My Scan Task By Bar Code",
+        "operationId": "ScanTask_GetMyByBarCode",
+        "parameters": [
+          {
+            "name": "BarCode",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfScanTaskResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/ScanTask/Post": {
+      "post": {
+        "tags": ["ScanTask"],
+        "summary": "Add Scan Task",
+        "operationId": "ScanTask_Post",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddScanTasksCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfLong"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/ScanTask/AddOrGet": {
+      "post": {
+        "tags": ["ScanTask"],
+        "summary": "Add Or Get Scan Task",
+        "operationId": "ScanTask_AddOrGet",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddOrGetScanTasksCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfScanTaskResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/ScanTask/Batch": {
+      "post": {
+        "tags": ["ScanTask"],
+        "summary": "Batch Add Scan Task",
+        "operationId": "ScanTask_Batch",
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BatchAddScanTasksCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfLong"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    },
+    "/v1/ScanTask/Assign": {
+      "post": {
+        "tags": ["ScanTask"],
+        "summary": "Get and assign scan task",
+        "operationId": "ScanTask_Assign",
+        "parameters": [
+          {
+            "name": "apiKey",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          },
+          {
+            "name": "workerId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 2
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfString"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/ScanTask/Finish": {
+      "post": {
+        "tags": ["ScanTask"],
+        "summary": "Finish SCan Task",
+        "operationId": "ScanTask_Finish",
+        "parameters": [
+          {
+            "name": "apiKey",
+            "in": "header",
+            "schema": {
+              "type": "string",
+              "nullable": true
+            },
+            "x-position": 1
+          }
+        ],
+        "requestBody": {
+          "x-name": "command",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FinnishScanTaskCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 2
+        },
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfLong"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/ScanTask/GetMyUsage": {
+      "get": {
+        "tags": ["ScanTask"],
+        "summary": "Get My Usage",
+        "operationId": "ScanTask_GetMyUsage",
+        "responses": {
+          "200": {
+            "description": "Status 200 OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ResultOfMyScanTasksUsageResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKey": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ResultOfListOfRoleClaimResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/RoleClaimResponse"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "RoleClaimResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "roleId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "group": {
+            "type": "string",
+            "nullable": true
+          },
+          "selected": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Result": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "messages": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "succeeded": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ResultOfString": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "type": "string",
+                "nullable": true
+              }
+            }
+          }
+        ]
+      },
+      "RoleClaimRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "roleId": {
+            "type": "string",
+            "format": "guid",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "group": {
+            "type": "string",
+            "nullable": true
+          },
+          "selected": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ResultOfListOfRoleResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/RoleResponse"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "RoleResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "RoleRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "ResultOfPermissionResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/PermissionResponse"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "PermissionResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "roleId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "roleName": {
+            "type": "string",
+            "nullable": true
+          },
+          "roleClaims": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/RoleClaimResponse"
+            }
+          }
+        }
+      },
+      "PermissionRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "roleId": {
+            "type": "string",
+            "nullable": true
+          },
+          "roleClaims": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/RoleClaimRequest"
+            }
+          }
+        }
+      },
+      "ResultOfDashboardDataResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/DashboardDataResponse"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "DashboardDataResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "roleCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dataEnterBarChart": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/ChartSeries"
+            }
+          }
+        }
+      },
+      "ChartSeries": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "data": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "type": "number",
+              "format": "double"
+            }
+          }
+        }
+      },
+      "PaginatedResultOfWorkerInfoResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/WorkerInfoResponse"
+                }
+              },
+              "currentPage": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "totalPages": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "totalCount": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "pageSize": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "hasPreviousPage": {
+                "type": "boolean"
+              },
+              "hasNextPage": {
+                "type": "boolean"
+              }
+            }
+          }
+        ]
+      },
+      "WorkerInfoResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "workerId": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastActivity": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isActive": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ResultOfLong": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          }
+        ]
+      },
+      "AddSubscriptionProductCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "scanTaskQouta",
+          "scanTaskQoutaLimit",
+          "infoTaskQouta",
+          "infoTaskQoutaLimit",
+          "durationMS",
+          "amount",
+          "amountSuffix",
+          "currencyCode",
+          "currency",
+          "reference",
+          "purchaseSource"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "scanTaskQouta": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "scanTaskQoutaLimit": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "infoTaskQouta": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "infoTaskQoutaLimit": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "durationMS": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "trialDurationMS": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "initialAmount": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "amountSuffix": {
+            "type": "string",
+            "minLength": 1
+          },
+          "currencyCode": {
+            "type": "string",
+            "minLength": 1
+          },
+          "currency": {
+            "type": "string",
+            "minLength": 1
+          },
+          "coupon": {
+            "type": "string",
+            "nullable": true
+          },
+          "reference": {
+            "type": "string",
+            "minLength": 1
+          },
+          "payAsYouGoReference": {
+            "type": "string",
+            "nullable": true
+          },
+          "purchaseSource": {
+            "$ref": "#/components/schemas/PurchaseSource"
+          },
+          "isTesting": {
+            "type": "boolean"
+          }
+        }
+      },
+      "PurchaseSource": {
+        "type": "integer",
+        "description": "0 = Internal\n1 = Stripe",
+        "x-enumNames": ["Internal", "Stripe"],
+        "enum": [0, 1]
+      },
+      "UpdateSubscriptionProductPublishedStateCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["productId"],
+        "properties": {
+          "productId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "isPublished": {
+            "type": "boolean"
+          }
+        }
+      },
+      "PaginatedResultOfSubscriptionProductResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/SubscriptionProductResponse"
+                }
+              },
+              "currentPage": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "totalPages": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "totalCount": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "pageSize": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "hasPreviousPage": {
+                "type": "boolean"
+              },
+              "hasNextPage": {
+                "type": "boolean"
+              }
+            }
+          }
+        ]
+      },
+      "SubscriptionProductResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "currency": {
+            "type": "string",
+            "nullable": true
+          },
+          "currencyCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "amountSuffix": {
+            "type": "string",
+            "nullable": true
+          },
+          "initialAmount": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "reference": {
+            "type": "string",
+            "nullable": true
+          },
+          "payAsYouGoReference": {
+            "type": "string",
+            "nullable": true
+          },
+          "purchaseSource": {
+            "$ref": "#/components/schemas/PurchaseSource"
+          },
+          "scanTaskQouta": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "scanTaskQoutaLimit": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "infoTaskQouta": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "infoTaskQoutaLimit": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "durationMS": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "trialDurationMS": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "coupon": {
+            "type": "string",
+            "nullable": true
+          },
+          "isTesting": {
+            "type": "boolean"
+          },
+          "isPublished": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ResultOfListOfDisplaySubscriptionProductResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/DisplaySubscriptionProductResponse"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "DisplaySubscriptionProductResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "currency": {
+            "type": "string",
+            "nullable": true
+          },
+          "currencyCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "amountSuffix": {
+            "type": "string",
+            "nullable": true
+          },
+          "initialAmount": {
+            "type": "number",
+            "format": "decimal",
+            "nullable": true
+          },
+          "reference": {
+            "type": "string",
+            "nullable": true
+          },
+          "payAsYouGoReference": {
+            "type": "string",
+            "nullable": true
+          },
+          "purchaseSource": {
+            "$ref": "#/components/schemas/PurchaseSource"
+          },
+          "scanTaskQouta": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "scanTaskQoutaLimit": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "infoTaskQouta": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "infoTaskQoutaLimit": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "durationMS": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "trialDurationMS": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "ResultOfCreateStripeCheckoutSessionResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/CreateStripeCheckoutSessionResponse"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "CreateStripeCheckoutSessionResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "paymentUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "CreateStripeCheckoutSessionCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["productId", "redirectLink"],
+        "properties": {
+          "productId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "redirectLink": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "ResultOfCreateStripeCustomerPortalResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/CreateStripeCustomerPortalResponse"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "CreateStripeCustomerPortalResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "portalUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "CreateStripeCustomerPortalCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["redirectLink"],
+        "properties": {
+          "redirectLink": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "CancelStripeSubscriptionCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["subscriptionPeriodId"],
+        "properties": {
+          "subscriptionPeriodId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "userId": {
+            "type": "string",
+            "format": "guid"
+          }
+        }
+      },
+      "AddInternalUserSubscriptionCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["productId", "startDate"],
+        "properties": {
+          "productId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "userId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date-time",
+            "minLength": 1
+          }
+        }
+      },
+      "ResultOfListOfUserSubscriptionPeriodResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/UserSubscriptionPeriodResponse"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "UserSubscriptionPeriodResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "productId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "product": {
+            "type": "string",
+            "nullable": true
+          },
+          "subscriptionPeriodType": {
+            "$ref": "#/components/schemas/SubscriptionPeriodType"
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "expirationDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "subscriptionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "transactionId": {
+            "type": "string",
+            "nullable": true
+          },
+          "isRefunded": {
+            "type": "boolean"
+          },
+          "refundedOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "isRenewCancelled": {
+            "type": "boolean"
+          },
+          "renewCancelledOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "scanTaskUsage": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "scanTaskLimit": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "infoTaskLimit": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "infoTaskUsage": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "SubscriptionPeriodType": {
+        "type": "integer",
+        "description": "0 = New\n1 = Renewal",
+        "x-enumNames": ["New", "Renewal"],
+        "enum": [0, 1]
+      },
+      "PaginatedResultOfUserSubscriptionPeriodResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/UserSubscriptionPeriodResponse"
+                }
+              },
+              "currentPage": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "totalPages": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "totalCount": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "pageSize": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "hasPreviousPage": {
+                "type": "boolean"
+              },
+              "hasNextPage": {
+                "type": "boolean"
+              }
+            }
+          }
+        ]
+      },
+      "ResultOfIEnumerableOfAuditResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/AuditResponse"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "AuditResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "userId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "tableName": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "oldValues": {
+            "type": "string",
+            "nullable": true
+          },
+          "newValues": {
+            "type": "string",
+            "nullable": true
+          },
+          "affectedColumns": {
+            "type": "string",
+            "nullable": true
+          },
+          "primaryKey": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "UpdateProfileRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["firstName", "lastName"],
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "lastName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "phoneNumber": {
+            "type": "string",
+            "format": "phone",
+            "nullable": true
+          },
+          "addressName": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressLine": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "state": {
+            "type": "string",
+            "nullable": true
+          },
+          "postalCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "countryCode": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "ResultOfProfileResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/ProfileResponse"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "ProfileResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressName": {
+            "type": "string",
+            "nullable": true
+          },
+          "addressLine": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "state": {
+            "type": "string",
+            "nullable": true
+          },
+          "postalCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "countryCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "monthlyQuota": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "ChangePasswordRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["password", "newPassword", "confirmNewPassword"],
+        "properties": {
+          "password": {
+            "type": "string",
+            "minLength": 1
+          },
+          "newPassword": {
+            "type": "string",
+            "minLength": 1
+          },
+          "confirmNewPassword": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "ResultOfApiKeyResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/ApiKeyResponse"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "ApiKeyResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "key": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "scanTaskQuota": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "scanTaskUsage": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "infoTaskQuota": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "infoTaskUsage": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "AddApiKeyCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "description",
+          "allowedScanTaskQuota",
+          "allowedInfoTaskQuota"
+        ],
+        "properties": {
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "allowedScanTaskQuota": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "allowedInfoTaskQuota": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "ChangeApiKeyStateCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "apiKeyId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "isActive": {
+            "type": "boolean"
+          }
+        }
+      },
+      "PaginatedResultOfApiKeyResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/ApiKeyResponse"
+                }
+              },
+              "currentPage": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "totalPages": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "totalCount": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "pageSize": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "hasPreviousPage": {
+                "type": "boolean"
+              },
+              "hasNextPage": {
+                "type": "boolean"
+              }
+            }
+          }
+        ]
+      },
+      "ResultOfTokenResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/TokenResponse"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "TokenResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "token": {
+            "type": "string",
+            "nullable": true
+          },
+          "refreshToken": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "TokenRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["email", "password"],
+        "properties": {
+          "email": {
+            "type": "string",
+            "minLength": 1
+          },
+          "password": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "RefreshTokenRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "token": {
+            "type": "string",
+            "nullable": true
+          },
+          "refreshToken": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "ResultOfListOfUserResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/UserResponse"
+                }
+              }
+            }
+          }
+        ]
+      },
+      "UserResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "guid"
+          },
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "emailConfirmed": {
+            "type": "boolean"
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "profilePictureDataUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "monthlyQuota": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "ResultOfUserResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/UserResponse"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "UpdateUserMonthlyQuotaRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "guid"
+          },
+          "monthlyQuota": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "ResultOfUserRolesResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/UserRolesResponse"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "UserRolesResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userRoles": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/UserRoleModel"
+            }
+          }
+        }
+      },
+      "UserRoleModel": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "roleName": {
+            "type": "string",
+            "nullable": true
+          },
+          "roleDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "selected": {
+            "type": "boolean"
+          }
+        }
+      },
+      "UpdateUserRolesRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "userId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "userRoles": {
+            "type": "array",
+            "nullable": true,
+            "items": {
+              "$ref": "#/components/schemas/UserRoleModel"
+            }
+          }
+        }
+      },
+      "CreateUserRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "firstName",
+          "lastName",
+          "email",
+          "userName",
+          "password",
+          "confirmPassword"
+        ],
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "lastName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "minLength": 1
+          },
+          "userName": {
+            "type": "string",
+            "minLength": 6
+          },
+          "password": {
+            "type": "string",
+            "minLength": 6
+          },
+          "confirmPassword": {
+            "type": "string",
+            "minLength": 1
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "activateUser": {
+            "type": "boolean"
+          },
+          "autoConfirmEmail": {
+            "type": "boolean"
+          },
+          "monthlyQuota": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "RegisterRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "firstName",
+          "lastName",
+          "email",
+          "userName",
+          "password",
+          "confirmPassword"
+        ],
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "lastName": {
+            "type": "string",
+            "minLength": 1
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "minLength": 1
+          },
+          "userName": {
+            "type": "string",
+            "minLength": 6
+          },
+          "password": {
+            "type": "string",
+            "minLength": 6
+          },
+          "confirmPassword": {
+            "type": "string",
+            "minLength": 1
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "ResultOfGuid": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "type": "string",
+                "format": "guid"
+              }
+            }
+          }
+        ]
+      },
+      "ToggleUserStatusRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "activateUser": {
+            "type": "boolean"
+          },
+          "userId": {
+            "type": "string",
+            "format": "guid"
+          }
+        }
+      },
+      "ForgotPasswordRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["email"],
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "minLength": 1
+          }
+        }
+      },
+      "ResetPasswordRequest": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["email", "password", "confirmPassword", "token"],
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "minLength": 1
+          },
+          "password": {
+            "type": "string",
+            "minLength": 1
+          },
+          "confirmPassword": {
+            "type": "string",
+            "minLength": 1
+          },
+          "token": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "PaginatedResultOfInfoTaskResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/InfoTaskResponse"
+                }
+              },
+              "currentPage": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "totalPages": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "totalCount": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "pageSize": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "hasPreviousPage": {
+                "type": "boolean"
+              },
+              "hasNextPage": {
+                "type": "boolean"
+              }
+            }
+          }
+        ]
+      },
+      "InfoTaskResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "userId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "user": {
+            "type": "string",
+            "nullable": true
+          },
+          "mainCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "secondaryCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "provider": {
+            "$ref": "#/components/schemas/InfoTaskProvider"
+          },
+          "taskState": {
+            "$ref": "#/components/schemas/TaskState"
+          },
+          "assignmentDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "finishedOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "createdOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "duration": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "processingDuration": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        }
+      },
+      "InfoTaskProvider": {
+        "type": "integer",
+        "description": "0 = Amazon\n1 = Walmart\n2 = Homedepot\n3 = Target",
+        "x-enumNames": ["Amazon", "Walmart", "Homedepot", "Target"],
+        "enum": [0, 1, 2, 3]
+      },
+      "TaskState": {
+        "type": "integer",
+        "description": "0 = Pending\n1 = Finished\n2 = Failed",
+        "x-enumNames": ["Pending", "Finished", "Failed"],
+        "enum": [0, 1, 2]
+      },
+      "ResultOfInfoTaskDetailsResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/InfoTaskDetailsResponse"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "InfoTaskDetailsResponse": {
+        "type": "object",
+        "deprecated": true,
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "userId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "user": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "string",
+            "nullable": true
+          },
+          "format": {
+            "type": "string",
+            "nullable": true
+          },
+          "retailPrice": {
+            "type": "string",
+            "nullable": true
+          },
+          "offerCount": {
+            "type": "string",
+            "nullable": true
+          },
+          "weight": {
+            "type": "string",
+            "nullable": true
+          },
+          "dimensions": {
+            "type": "string",
+            "nullable": true
+          },
+          "shippedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "priceAndFreeShipping": {
+            "type": "string",
+            "nullable": true
+          },
+          "upc": {
+            "type": "string",
+            "nullable": true
+          },
+          "category": {
+            "type": "string",
+            "nullable": true
+          },
+          "priceAndSpecificShipping": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageOneUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageTwoUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageThreeUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageFourUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageFiveUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageSixUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "condition": {
+            "type": "string",
+            "nullable": true
+          },
+          "rating": {
+            "type": "string",
+            "nullable": true
+          },
+          "numberOfRatings": {
+            "type": "string",
+            "nullable": true
+          },
+          "asin": {
+            "type": "string",
+            "nullable": true
+          },
+          "taskState": {
+            "$ref": "#/components/schemas/TaskState"
+          },
+          "assignmentDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "finishedOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "createdOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "duration": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "processingDuration": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        }
+      },
+      "AddInfoTasksCommand": {
+        "type": "object",
+        "deprecated": true,
+        "additionalProperties": false,
+        "required": ["asin"],
+        "properties": {
+          "asin": {
+            "type": "string",
+            "minLength": 1
+          },
+          "callBackUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "AddOrGetInfoTasksCommand": {
+        "type": "object",
+        "deprecated": true,
+        "additionalProperties": false,
+        "required": ["asin"],
+        "properties": {
+          "asin": {
+            "type": "string",
+            "minLength": 1
+          },
+          "callBackUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "BatchAddInfoTasksCommand": {
+        "type": "object",
+        "deprecated": true,
+        "additionalProperties": false,
+        "required": ["asins"],
+        "properties": {
+          "asins": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "callBackUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "FinnishInfoTaskCommand": {
+        "type": "object",
+        "deprecated": true,
+        "additionalProperties": false,
+        "required": ["asin"],
+        "properties": {
+          "asin": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "string",
+            "nullable": true
+          },
+          "format": {
+            "type": "string",
+            "nullable": true
+          },
+          "retailPrice": {
+            "type": "string",
+            "nullable": true
+          },
+          "offerCount": {
+            "type": "string",
+            "nullable": true
+          },
+          "weight": {
+            "type": "string",
+            "nullable": true
+          },
+          "dimensions": {
+            "type": "string",
+            "nullable": true
+          },
+          "shippedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "priceAndFreeShipping": {
+            "type": "string",
+            "nullable": true
+          },
+          "priceAndSpecificShipping": {
+            "type": "string",
+            "nullable": true
+          },
+          "category": {
+            "type": "string",
+            "nullable": true
+          },
+          "upc": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageOneUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageTwoUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageThreeUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageFourUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageFiveUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageSixUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "condition": {
+            "type": "string",
+            "nullable": true
+          },
+          "rating": {
+            "type": "string",
+            "nullable": true
+          },
+          "numberOfRatings": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "ResultOfMyInfoTasksUsageResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/MyInfoTasksUsageResponse"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "MyInfoTasksUsageResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "limit": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "usage": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "ResultOfInfoTaskDictionaryResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/InfoTaskDictionaryResponse"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "InfoTaskDictionaryResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "userId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "user": {
+            "type": "string",
+            "nullable": true
+          },
+          "mainCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "provider": {
+            "$ref": "#/components/schemas/InfoTaskProvider"
+          },
+          "details": {
+            "type": "object",
+            "nullable": true,
+            "additionalProperties": {}
+          },
+          "taskState": {
+            "$ref": "#/components/schemas/TaskState"
+          },
+          "assignmentDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "finishedOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "createdOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "duration": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "processingDuration": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        }
+      },
+      "AddInfoTasksV2Command": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["mainCode"],
+        "properties": {
+          "mainCode": {
+            "type": "string",
+            "minLength": 1
+          },
+          "provider": {
+            "$ref": "#/components/schemas/InfoTaskProvider"
+          },
+          "callBackUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "AddOrGetInfoTasksV2Command": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["mainCode"],
+        "properties": {
+          "mainCode": {
+            "type": "string",
+            "minLength": 1
+          },
+          "provider": {
+            "$ref": "#/components/schemas/InfoTaskProvider"
+          },
+          "callBackUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "BatchAddInfoTasksV2Command": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["mainCodes"],
+        "properties": {
+          "mainCodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "provider": {
+            "$ref": "#/components/schemas/InfoTaskProvider"
+          },
+          "callBackUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "FinnishInfoTaskV2CommandOfJsonDocument": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["mainCode"],
+        "properties": {
+          "mainCode": {
+            "type": "string",
+            "minLength": 1
+          },
+          "provider": {
+            "$ref": "#/components/schemas/InfoTaskProvider"
+          },
+          "details": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/JsonDocument"
+              }
+            ]
+          }
+        }
+      },
+      "JsonDocument": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "rootElement": {}
+        }
+      },
+      "PaginatedResultOfScanTaskResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "type": "array",
+                "nullable": true,
+                "items": {
+                  "$ref": "#/components/schemas/ScanTaskResponse"
+                }
+              },
+              "currentPage": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "totalPages": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "totalCount": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "pageSize": {
+                "type": "integer",
+                "format": "int32"
+              },
+              "hasPreviousPage": {
+                "type": "boolean"
+              },
+              "hasNextPage": {
+                "type": "boolean"
+              }
+            }
+          }
+        ]
+      },
+      "ScanTaskResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "userId": {
+            "type": "string",
+            "format": "guid"
+          },
+          "user": {
+            "type": "string",
+            "nullable": true
+          },
+          "asin": {
+            "type": "string",
+            "nullable": true
+          },
+          "barCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "taskState": {
+            "$ref": "#/components/schemas/TaskState"
+          },
+          "assignmentDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "finishedOn": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "createdOn": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "duration": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "processingDuration": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        }
+      },
+      "ResultOfScanTaskResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/ScanTaskResponse"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "AddScanTasksCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["barCode"],
+        "properties": {
+          "barCode": {
+            "type": "string",
+            "minLength": 1
+          },
+          "callBackUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "workerId": {
+            "type": "string",
+            "nullable": true
+          },
+          "addInfoTask": {
+            "type": "boolean"
+          }
+        }
+      },
+      "AddOrGetScanTasksCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["barCode"],
+        "properties": {
+          "barCode": {
+            "type": "string",
+            "minLength": 1
+          },
+          "callBackUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "BatchAddScanTasksCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["barCodes"],
+        "properties": {
+          "barCodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "callBackUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "FinnishScanTaskCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "barCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "asin": {
+            "type": "string",
+            "nullable": true
+          },
+          "workerId": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "ResultOfMyScanTasksUsageResponse": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Result"
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "data": {
+                "nullable": true,
+                "oneOf": [
+                  {
+                    "$ref": "#/components/schemas/MyScanTasksUsageResponse"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "MyScanTasksUsageResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "limit": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "usage": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "ApiKey": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "Api-Key"
+      }
+    }
+  }
+}

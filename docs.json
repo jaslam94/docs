@@ -1,102 +1,54 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "ATO.BARCODE",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
     "dark": "#15803D"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.ico",
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Amazon - ATO.BARCODE.InfoTask",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "InfoTask",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Essentials",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+              "api-reference/endpoints/infotask/get-my-info-tasks",
+              "api-reference/endpoints/infotask/get-my-info-task-by-id",
+              "api-reference/endpoints/infotask/get-my-info-task-by-bar-code",
+              "api-reference/endpoints/infotask/add-info-task",
+              "api-reference/endpoints/infotask/add-or-get-info-task",
+              "api-reference/endpoints/infotask/batch-add-info-task",
+              "api-reference/endpoints/infotask/get-and-assign-info-task",
+              "api-reference/endpoints/infotask/finish-info-task",
+              "api-reference/endpoints/infotask/get-my-usage",
+              "api-reference/endpoints/infotask/get-my-info-task-by-id-1",
+              "api-reference/endpoints/infotask/get-my-info-task-by-bar-code-1",
+              "api-reference/endpoints/infotask/add-info-task-1",
+              "api-reference/endpoints/infotask/add-or-get-info-task-1",
+              "api-reference/endpoints/infotask/batch-add-info-task-1",
+              "api-reference/endpoints/infotask/finish-info-task-1"
             ]
           }
         ]
       },
       {
-        "tab": "API Reference",
-        "groups": [
-          {
-            "group": "API Documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint Examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
+        "tab": "FNSKU to ASIN - ATO.BARCODE.ScanTask",
+        "pages": [
+          "api-reference/endpoints/scantask/get-my-scan-tasks",
+          "api-reference/endpoints/scantask/get-my-scan-task-by-id",
+          "api-reference/endpoints/scantask/get-my-scan-task-by-bar-code",
+          "api-reference/endpoints/scantask/add-scan-task",
+          "api-reference/endpoints/scantask/add-or-get-scan-task",
+          "api-reference/endpoints/scantask/batch-add-scan-task",
+          "api-reference/endpoints/scantask/get-and-assign-scan-task",
+          "api-reference/endpoints/scantask/finish-scan-task",
+          "api-reference/endpoints/scantask/get-my-usage"
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+    ]
   }
 }
