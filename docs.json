@@ -16,36 +16,37 @@
           {
             "group": "InfoTask",
             "pages": [
-              "api-reference/endpoint/infotask/get-my-info-tasks",
-              "api-reference/endpoint/infotask/get-my-info-task-by-id",
-              "api-reference/endpoint/infotask/get-my-info-task-by-bar-code",
-              "api-reference/endpoint/infotask/add-info-task",
-              "api-reference/endpoint/infotask/add-or-get-info-task",
-              "api-reference/endpoint/infotask/batch-add-info-task",
-              "api-reference/endpoint/infotask/get-and-assign-info-task",
-              "api-reference/endpoint/infotask/finish-info-task",
-              "api-reference/endpoint/infotask/get-my-usage"
+              "api-reference/endpoints/infotask/get-my-info-tasks",
+              "api-reference/endpoints/infotask/get-my-info-task-by-id",
+              "api-reference/endpoints/infotask/get-my-info-task-by-bar-code",
+              "api-reference/endpoints/infotask/add-info-task",
+              "api-reference/endpoints/infotask/add-or-get-info-task",
+              "api-reference/endpoints/infotask/batch-add-info-task",
+              "api-reference/endpoints/infotask/get-and-assign-info-task",
+              "api-reference/endpoints/infotask/finish-info-task",
+              "api-reference/endpoints/infotask/get-my-usage",
+              "api-reference/endpoints/infotask/get-my-info-task-by-id-1",
+              "api-reference/endpoints/infotask/get-my-info-task-by-bar-code-1",
+              "api-reference/endpoints/infotask/add-info-task-1",
+              "api-reference/endpoints/infotask/add-or-get-info-task-1",
+              "api-reference/endpoints/infotask/batch-add-info-task-1",
+              "api-reference/endpoints/infotask/finish-info-task-1"
             ]
           }
         ]
       },
       {
         "tab": "FNSKU to ASIN - ATO.BARCODE.ScanTask",
-        "groups": [
-          {
-            "group": "ScanTask",
-            "pages": [
-              "api-reference/endpoint/scantask/get-my-scan-tasks",
-              "api-reference/endpoint/scantask/get-my-scan-task-by-id",
-              "api-reference/endpoint/scantask/get-my-scan-task-by-bar-code",
-              "api-reference/endpoint/scantask/add-scan-task",
-              "api-reference/endpoint/scantask/add-or-get-scan-task",
-              "api-reference/endpoint/scantask/batch-add-scan-task",
-              "api-reference/endpoint/scantask/get-and-assign-scan-task",
-              "api-reference/endpoint/scantask/finish-scan-task",
-              "api-reference/endpoint/scantask/get-my-usage"
-            ]
-          }
+        "pages": [
+          "api-reference/endpoints/scantask/get-my-scan-tasks",
+          "api-reference/endpoints/scantask/get-my-scan-task-by-id",
+          "api-reference/endpoints/scantask/get-my-scan-task-by-bar-code",
+          "api-reference/endpoints/scantask/add-scan-task",
+          "api-reference/endpoints/scantask/add-or-get-scan-task",
+          "api-reference/endpoints/scantask/batch-add-scan-task",
+          "api-reference/endpoints/scantask/get-and-assign-scan-task",
+          "api-reference/endpoints/scantask/finish-scan-task",
+          "api-reference/endpoints/scantask/get-my-usage"
         ]
       }
     ]
