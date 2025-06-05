@@ -5560,10 +5560,8 @@
     "securitySchemes": {
       "ApiKey": {
         "type": "apiKey",
-        "description": "Api key header. Example: \"Api-Key: {key}\"",
-        "name": "Api-Key",
         "in": "header",
-        "scheme": "ApiKey"
+        "name": "Api-Key"
       }
     }
   }
